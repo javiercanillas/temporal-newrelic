@@ -8,7 +8,7 @@
     <url>https://github.com/javiercanillas/temporal-newrelic</url>
     <groupId>io.github.javiercanillas.temporal.newrelic</groupId>
     <artifactId>temporal-newrelic</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
 
     <licenses>
         <license>
@@ -21,7 +21,7 @@
         <url>https://github.com/javiercanillas/temporal-newrelic</url>
         <connection>scm:git:git://github.com/javiercanillas/temporal-newrelic.git</connection>
         <developerConnection>scm:git:git@github.com:javiercanillas/temporal-newrelic.git</developerConnection>
-        <tag>temporal-newrelic-0.1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
