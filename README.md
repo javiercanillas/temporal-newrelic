@@ -51,7 +51,41 @@ with propagation (not the workflow execution itself), like this:
 var propagator = SilentWrapperContextPropagator.wrap(new NewRelicDistributedTraceContextPropagator());
 ```
 
-For more examples, check the tests about the class.
+## Metric Scope
+Temporal also has the capability to report its internal metrics to external services. To be able to send this information
+to NewRelic as custom metrics you can configure `MetricScopeReporter` as following:
+```java
+WorkflowServiceStubs service = WorkflowServiceStubs.newServiceStubs(WorkflowServiceStubsOptions.newBuilder()
+            .setMetricsScope(MetricScopeReporter.getScope())
+            .validateAndBuildWithDefaults());
+```
+
+This will produce metrics starting with the pattern `Custom/temporalio/`. At the moment there is support for:
+* timer: `Custom/temporalio/timer`
+* gauge: `Custom/temporalio/gauge`
+* counter: `Custom/temporalio/counter`
+
+After that is appended the following relevant information:
+*   namespace
+*   worker_type
+*   task_queue
+*   workflow_type
+*   operation_name
+*   signal_name
+*   activity_type
+*   query_type
+*   exception
+*   status_code
+
+If any of this information is not present on the reported record, the word `none` will take its place instead of null. For example:
+
+```java
+MetricScopeReporter.instance().reportCounter("name", Map.of(), 1L);
+```
+will append the following metric: `Custom/temporalio/timer/none/none/none/none/none/none/none/none/none/none/name` with the given value.
+
+Furthermore, `timer`s will be reported using `NewRelic.recordResponseTimeMetric`, `counter`s with `NewRelic.recordResponseTimeMetric` 
+and finally `gauge`s with `NewRelic.recordMetric`.
 
 ## How to install
 If you prefer to use maven central releases, you can find it [here](https://search.maven.org/artifact/io.github.javiercanillas/temporal-newrelic). Also, if you support [Jitpack.io](https://jitpack.io/) you can find it [here](https://jitpack.io/#javiercanillas/temporal-newrelic)
