@@ -7,7 +7,7 @@
         Newrelic extension for Temporal Java SDK
     </description>
 
-    <url>https://github.com/javiercanillas/temporal-sdk-newrelic</url>
+    <url>https://github.com/javiercanillas/temporal-newrelic</url>
     <groupId>io.github.javiercanillas.temporal.newrelic</groupId>
     <artifactId>temporal-newrelic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -20,9 +20,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/javiercanillas/temporal-sdk-newrelic</url>
-        <connection>scm:git:git://github.com/javiercanillas/temporal-sdk-newrelic.git</connection>
-        <developerConnection>scm:git:git@github.com:javiercanillas/temporal-sdk-newrelic.git</developerConnection>
+        <url>https://github.com/javiercanillas/temporal-newrelic</url>
+        <connection>scm:git:git://github.com/javiercanillas/temporal-newrelic.git</connection>
+        <developerConnection>scm:git:git@github.com:javiercanillas/temporal-newrelic.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
