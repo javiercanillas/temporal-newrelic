@@ -7,7 +7,7 @@
     </description>
 
     <url>https://github.com/javiercanillas/temporal-newrelic</url>
-    <groupId>io.github.javiercanillas.temporal.newrelic</groupId>
+    <groupId>io.github.javiercanillas</groupId>
     <artifactId>temporal-newrelic</artifactId>
     <version>0.1.2-SNAPSHOT</version>
 
